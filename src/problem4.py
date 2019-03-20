@@ -81,12 +81,12 @@ def problem4(point1, point2, n, window):
       :type window:  rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # IMPORTANT: For PARTIAL CREDIT, ignore the colors.
     # -------------------------------------------------------------------------
-    distancex = (point2.x - point1.x) // (2*n)
-    distancey = (point2.y - point1.y) // (2*n)
+    distancex = (point2.x - point1.x) / (2 * n)
+    distancey = (point2.y - point1.y) / (2 * n)
     point1.attach_to(window)
     point2.attach_to(window)
     for k in range(n):
