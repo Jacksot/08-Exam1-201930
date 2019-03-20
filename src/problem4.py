@@ -3,10 +3,11 @@ Exam 1, problem 4.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Tyrique Jackson
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 def main():
@@ -84,7 +85,18 @@ def problem4(point1, point2, n, window):
     #          Tests have been written for you (above).
     # IMPORTANT: For PARTIAL CREDIT, ignore the colors.
     # -------------------------------------------------------------------------
-
+    distancex = (point2.x - point1.x) // (2*n)
+    distancey = (point2.y - point1.y) // (2*n)
+    point1.attach_to(window)
+    point2.attach_to(window)
+    for k in range(n):
+        new_point1 = rg.Point(point1.x + (distancex * (k + 1)), point1.y + (distancey * (k + 1)))
+        new_point2 = rg.Point(point2.x - (distancex * (k + 1)), point2.y - (distancey * (k + 1)))
+        new_point1.fill_color = point2.fill_color
+        new_point2.fill_color = point1.fill_color
+        new_point2.attach_to(window)
+        new_point1.attach_to(window)
+        window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
